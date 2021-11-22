@@ -6,11 +6,11 @@ const output = document.querySelector("#outputDiv");
 
 function profitLossCalculator (stock,quantity,current){
     if(stock>current){
-        var loss = (stock - current)/quantity;
-        var lossPercentage = (loss/stock)*100;
+        var loss = (stock - current)*quantity;
+        var lossPercentage = (loss/stock)/100;
         outputMessage(`Your loss is ${loss} and loss percent is ${lossPercentage}%`)
     }else if(current>stock){
-        var profit = (current-stock)/quantity;
+        var profit = (current-stock)*quantity;
         var profitPercentage = (profit/stock)*100;
         outputMessage(`Your loss is ${profit} and loss percent is ${profitPercentage}%`)
     }else{
