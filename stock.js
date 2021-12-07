@@ -5,17 +5,22 @@ const button = document.querySelector("#checkBtn");
 const output = document.querySelector("#outputDiv");
 
 function profitLossCalculator (stock,quantity,current){
-    if(stock>current){
-        var loss = (stock - current)*quantity;
-        var lossPercentage = (loss/stock)/100;
-        outputMessage(`Your loss is ${loss} and loss percent is ${lossPercentage}%`)
-    }else if(current>stock){
-        var profit = (current-stock)*quantity;
-        var profitPercentage = (profit/stock)/100;
-        outputMessage(`Your loss is ${profit} and loss percent is ${profitPercentage}%`)
+    if(stock > 0 && quantity > 0 && current > 0){
+        if(stock>current){
+            var loss = (stock - current)*quantity;
+            var lossPercentage = (loss/stock)/100;
+            outputMessage(`Your loss is ${loss} and loss percent is ${lossPercentage}%`)
+        }else if(current>stock){
+            var profit = (current-stock)*quantity;
+            var profitPercentage = (profit/stock)/100;
+            outputMessage(`Your loss is ${profit} and loss percent is ${profitPercentage}%`)
+        }else{
+            outputMessage(`There is no loss or profit in your Stock`)
+        }
     }else{
-        outputMessage(`There is no loss or profit in your Stock`)
+        output.innerText = "Enter a valid"
     }
+   
 }
 
 // profitLossCalculator(10,10,100)
