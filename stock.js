@@ -18,7 +18,7 @@ function profitLossCalculator (stock,quantity,current){
             outputMessage(`There is no loss or profit in your Stock`)
         }
     }else{
-        output.innerText = "Enter a valid"
+        output.innerText = "Enter a valid input "
     }
    
 }
